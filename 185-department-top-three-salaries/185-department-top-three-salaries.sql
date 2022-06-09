@@ -1,0 +1,1 @@
+select Department, Employee ,Salary  from ( select b.name as Department, a.name as Employee ,a.Salary as Salary  , dense_rank() over(partition by departmentId order by salary desc  ) as r  from Employee a join Department b on a.departmentId = b.id ) a where r <= 3
