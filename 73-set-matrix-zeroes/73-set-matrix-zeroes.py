@@ -4,14 +4,13 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         
         """
-        row = {}
-        columns = {}
+        row,columns = {},{}
         n,m = len(matrix), len(matrix[0])
         for i in range(n):
             for j in range(m):
                 if matrix[i][j] == 0:
-                    row[i] = 1
-                    columns[j] = 1
+                    row[i],columns[j] = 1,1
+                    
         
         for i in range(n):
             for j in range(m):
