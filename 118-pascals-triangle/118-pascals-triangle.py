@@ -1,14 +1,11 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        a = [[] for i in range(numRows)]
-        
-        for i in range(numRows):
-            for j in range(i+1):
-                if j < i:
-                    if j == 0:
-                        a[i].append(1)
-                    else:
-                        a[i].append(a[i-1][j] + a[i-1][j-1])
-                elif i == j:
-                    a[i].append(1)
-        return a
+        temp,row = [[1]],1
+        while row < numRows:
+            temp.append([1])
+            for i in range(1,row):
+                temp[row].append(temp[row-1][i-1] + temp[row-1][i])
+            temp[row].append(1)
+            row += 1
+        return temp
+		
