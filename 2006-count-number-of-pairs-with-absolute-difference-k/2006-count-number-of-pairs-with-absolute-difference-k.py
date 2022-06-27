@@ -4,6 +4,6 @@ class Solution:
         for i in range(len(nums)):
             for j in range(len(nums)):
                 if (i<j):
-                    if (nums[i] - nums[j] ==k) or (nums[i] - nums[j] ==-k):
+                    if abs(nums[i] - nums[j]) == k:
                         counter += 1
         return counter
